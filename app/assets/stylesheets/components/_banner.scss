@@ -1,0 +1,33 @@
+.banner-full-screen {
+  height: 100vh;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+
+  background-size: cover;
+  background-position: top;
+  background-image: linear-gradient(rgba(200, 200, 200, 0.2),rgba(200, 200, 200, 0.4)), url("https://cdn.pixabay.com/photo/2019/02/14/10/49/alien-3996333_960_720.jpg");
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.banner-center-container {
+  width: 70%;
+  padding: 0, 20px;
+  background-color: rgba(250, 250, 250, 0.5);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h1, p {
+    text-align: center;
+  }
+
+  p {
+    font-size: 2rem;
+  }
+}
