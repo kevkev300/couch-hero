@@ -4,3 +4,6 @@
 * the script can take arguments: `` `python3 lib/assets/python/test.py "#{argument}"` ``
 * create a python script in lib/python
 * retrun has to be a string, therefore use print as "return" from python (see lib/assets/python/test.py)
+
+## What's needed for the python files:
+* 
