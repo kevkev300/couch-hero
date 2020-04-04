@@ -22,6 +22,8 @@ class Api::V1::ResponsesController < Api::V1::BaseController
     case intent
     when 'How many people are infected?'
       `python3 lib/assets/python/confirmedCases.py "#{parameters["country"]}"`
+    when 'trigger number 2'
+      `python -m pip install mysql-connector`
     when 'get_version'
       `python --version`
     when 'trigger_mysql'
