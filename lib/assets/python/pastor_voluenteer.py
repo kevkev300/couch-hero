@@ -1,7 +1,7 @@
 import sys
-import mysql.connector
 import random
 from textmagic.rest import TextmagicRestClient
+import mysql.connector
 
 
 ## Google Cloud MySQL credentials
