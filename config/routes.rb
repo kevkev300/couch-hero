@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
       # resources :chatbot, only: [:create]
-      post '/chatbot', to: 'chatbot#parse'
+      post '/parse', to: 'chatbot#parse'
+      get '/response', to: 'chatbot#response'
     end
   end
 end

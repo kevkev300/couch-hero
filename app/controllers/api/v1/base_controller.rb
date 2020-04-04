@@ -14,6 +14,6 @@ class Api::V1::BaseController < ActionController::API
     else
       response = { error: "Internal Server Error" }
     end
-    render json: response, status: :internal_server_error
+    render json: response, status: 500
   end
 end

@@ -1,0 +1,1 @@
+jbuilder.fulfillmentText @answer.text
