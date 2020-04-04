@@ -26,7 +26,7 @@ class Api::V1::ResponsesController < Api::V1::BaseController
       `python3 lib/assets/python/best_shoppingtime.py  "#{parameters["Location"]}"`
     when 'request_help'
       str = stringify(parameters["phone-number"], parameters["zip-code"], parameters["last-name"])
-      `python3 lib/assets/python/file.py "#{str}"`
+      `python3 lib/assets/python/request_help.py "#{str}"`
     end
   end
 
