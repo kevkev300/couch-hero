@@ -1,4 +1,4 @@
-class Response
+class Response < ApplicationRecord
   # def initialize(text)
   #   @text = text
   # end

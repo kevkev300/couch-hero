@@ -1,17 +1,18 @@
-class Api::V1::ChatbotController < Api::V1::BaseController
+class Api::V1::ResponsesController < Api::V1::BaseController
   def parse
     intent = intent_params
     parameters = parameter_params
 
-    answer_text = find_answer(intent, parameters)
-    @answer = Response.create(text: answer_text)
+    # answer_text = find_answer(intent, parameters)
+    answer_text = 'this is a response'
+    @response = { fulfillmentText: answer_text }
 
     render :response
   end
 
-  def response
-    @answer = Response.create(text: 'test')
-    # render json: @answer
+  def answer
+    @response = { fulfillmentText: 'test' } if @response.nil?
+    # @answer = Response.create(text: 'test')
   end
 
   private
