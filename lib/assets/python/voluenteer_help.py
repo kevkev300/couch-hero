@@ -10,5 +10,3 @@ ADD_VOLUENTEER(phone_no, zip_code,name,pastor)
 
 print("Thank you for voluenteering. You will recieve an SMS when your help is needed")
 
-
-
