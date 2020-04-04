@@ -1,3 +1,11 @@
+"""
+Intend id: 1.2 can leave
+Input: $location, string
+Return: one String
+
+
+
+"""
 import sys
 import time
 from math import ceil
@@ -76,7 +84,7 @@ def main(argv):
 	worst_time = (16, 18)
 
 	if cur_day in {5,6}: 
-		print("You should not shop in the weekend as the store are most busy there. If you have to go shop: ", end = '')
+		print("You should not shop in the weekend as the store are most busy there. If you have to go shop:\n ", end = '')
 
 	if worst_time[0] <= cur_hour and cur_hour <= worst_time[1]:
 		print("You should wait at least ", ciel(worst_time[1] - cur_hour) , " hours before shopping to minimize infection risk", sep = '')

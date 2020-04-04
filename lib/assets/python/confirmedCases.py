@@ -1,5 +1,5 @@
 from urllib import parse, request
-from datetime import date
+#from datetime import datetime
 import json
 import sys
 
@@ -26,7 +26,7 @@ def appendInt(num):
         return 'th'
 
 
-country = "United States"
+country = "Denmark"
 if len(sys.argv) > 1:
   country = sys.argv[1]
 countryCode = convertCountryCode(country)
@@ -37,9 +37,12 @@ data = request.urlopen(url).read()
 data = json.loads(data)
 data = data[-1]
 currDate = data['Date']
-currDate = date.fromisoformat(currDate[:10])
+#currDate = date.fromisoformat(currDate[:10])
+#currDate = datetime.strftime(currDate[:10], "%m/%d/%Y")
+
 cases = data['Cases']
-currDate = '{0:%d}{1} of {0:%B} {0:%Y}'.format(currDate, appendInt(currDate.day))
+currDate = ""
+#currDate = '{0:%d}{1} of {0:%B} {0:%Y}'.format(currDate, appendInt(currDate.day))
 message = "On the " + currDate + ", the total number of confirmed cases of COVID-19 in " + country + " was " + str(cases) + "."
 print(message)
 
