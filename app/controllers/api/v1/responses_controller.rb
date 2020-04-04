@@ -30,6 +30,6 @@ class Api::V1::ResponsesController < Api::V1::BaseController
   end
 
   def find_parameters(file)
-    file["queryResult"]["parameters"]["param"]
+    file["queryResult"]["parameters"]["country"]
   end
 end
