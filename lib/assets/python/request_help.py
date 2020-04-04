@@ -1,8 +1,12 @@
 from pastor_voluenteer import *
 
-phone_no_r = sys.argv[1]
-zip_code = sys.argv[2]
-pastor = sys.argv[3]
+parameters = sys.argv[1]
+parameters = parameters.split()
+
+phone_no_r = parameters[0]
+zip_code = parameters[1]
+pastor = parameters[2]
+
 
 voluenteer = GET_VOLUENTEER(zip_code,pastor)
 phone_no_v = voluenteer[4]
