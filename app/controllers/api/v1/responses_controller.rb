@@ -41,5 +41,4 @@ class Api::V1::ResponsesController < Api::V1::BaseController
   def stringify(param1, param2, param3)
     "#{param1} ~ #{param2} ~ #{param3}"
   end
-
 end
