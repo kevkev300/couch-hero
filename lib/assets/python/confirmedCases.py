@@ -6,6 +6,12 @@ import sys
 def convertCountryCode(country):
   if country == "United States":
     return "US"
+  elif country == "United Kingdom":
+    return "united-kingdom"
+  elif country == "the United States":
+    return "US"
+  elif country == "Czech republic":
+    return "czech-republic"
   else:
     return country
 
@@ -43,7 +49,7 @@ currDate = data['Date']
 cases = data['Cases']
 currDate = ""
 #currDate = '{0:%d}{1} of {0:%B} {0:%Y}'.format(currDate, appendInt(currDate.day))
-message = "On the " + currDate + ", the total number of confirmed cases of COVID-19 in " + country + " was " + str(cases) + "."
+message = "The latest total number of confirmed cases of COVID-19 in " + country + " was " + str(cases) + "."
 print(message)
 
 
