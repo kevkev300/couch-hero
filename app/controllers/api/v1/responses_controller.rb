@@ -27,7 +27,7 @@ class Api::V1::ResponsesController < Api::V1::BaseController
     when 'request_help'
       #str = stringify(parameters["phone-number"], parameters["zip-code"], parameters["last-name"])
       #`python lib/assets/python/request_help.py "#{str}"`
-      `python3 --version`
+      `python -m pip install mysql-connector`
     end
   end
 
