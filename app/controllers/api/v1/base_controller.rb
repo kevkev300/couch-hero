@@ -4,7 +4,7 @@ class Api::V1::BaseController < ActionController::API
 
   private
 
-  def not_found
+  def not_found(exception)
     render json: { error: exception.message }, status: :not_found
   end
 
@@ -14,6 +14,6 @@ class Api::V1::BaseController < ActionController::API
     else
       response = { error: "Internal Server Error" }
     end
-    render json: response, status: 500
+    render json: response, status: :internal_server_error
   end
 end

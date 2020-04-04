@@ -4,13 +4,13 @@ class Api::V1::ChatbotController < Api::V1::BaseController
     parameters = parameter_params
 
     answer_text = find_answer(intent, parameters)
-    @answer = Response.new(answer_text)
+    @answer = Response.create(text: answer_text)
 
-    render :answer
+    render :response
   end
 
   def response
-    @answer = Response.new('test')
+    @answer = Response.create(text: 'test')
     # render json: @answer
   end
 
