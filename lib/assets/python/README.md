@@ -7,3 +7,4 @@
 
 ## What's needed for the python files:
 * python3 confirmedCases.py country --- country is the parameter $country as a plain string, returns a string that should be directly the response to the user
+* python3 best_shoppingtime.py state --- parameter $location as string. Returns response as a single string. 
