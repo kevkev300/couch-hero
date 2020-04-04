@@ -1,4 +1,4 @@
-from pastor_voluenteer import *
+# from pastor_voluenteer import *
 
 phone_no_r = sys.argv[1]
 zip_code = sys.argv[2]
