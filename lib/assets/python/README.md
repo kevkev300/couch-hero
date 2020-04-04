@@ -6,4 +6,4 @@
 * retrun has to be a string, therefore use print as "return" from python (see lib/assets/python/test.py)
 
 ## What's needed for the python files:
-* 
+* python3 confirmedCases.py country --- country is the parameter $country as a plain string
