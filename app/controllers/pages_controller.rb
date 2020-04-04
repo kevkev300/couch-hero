@@ -1,8 +1,10 @@
 class PagesController < ApplicationController
   def home
-    input_text = 1
+  end
 
-    # execute the python script, retrun has to be a string
-    @variable = `python3 lib/assets/python/test.py "#{input_text}"`
+  def test
+    country = "United States"
+    @text = `python3 lib/assets/python/confirmedCases.py "#{country}"`
+    # @text = "hi"
   end
 end

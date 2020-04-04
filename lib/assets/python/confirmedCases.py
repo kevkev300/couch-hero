@@ -53,3 +53,4 @@ message = "The latest total number of confirmed cases of COVID-19 in " + country
 print(message)
 
 
+>>>>>>> 9e520329c141872cb3793a148e35f3ad55f8d072
