@@ -9,7 +9,7 @@ zip_code = parameters[1]
 pastor = parameters[2]
 
 
-print(phone_no_r)
+#print(phone_no_r)
 
 voluenteer = GET_VOLUENTEER(zip_code,pastor)
 phone_no_v = voluenteer[4]
