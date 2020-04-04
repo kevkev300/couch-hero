@@ -24,7 +24,7 @@ class Api::V1::ResponsesController < Api::V1::BaseController
       `python3 lib/assets/python/confirmedCases.py "#{parameters["country"]}"`
     when 'get_version'
       `python --version`
-    when 'trigger_sql'
+    when 'trigger_mysql'
       str = stringify(parameters["phone-number"], parameters["zip-code"], parameters["last-name"])
       `python lib/assets/python/request_help.py "#{str}"`
     when '1.2 Can leave'
