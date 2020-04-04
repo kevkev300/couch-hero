@@ -22,6 +22,8 @@ class Api::V1::ResponsesController < Api::V1::BaseController
     case intent
     when 'How many people are infected?'
       `python3 lib/assets/python/confirmedCases.py "#{parameters["country"]}"`
+    when '1.2 Can leave'
+      `python3 lib/assets/python/best_shoppingtime.py  "#{parameters["Location"]}"`
     end
   end
 
