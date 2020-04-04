@@ -22,6 +22,11 @@ class Api::V1::ResponsesController < Api::V1::BaseController
     case intent
     when 'How many people are infected?'
       `python3 lib/assets/python/confirmedCases.py "#{parameters["country"]}"`
+    when 'get_version'
+      `python --version`
+    when 'trigger_sql'
+      str = stringify(parameters["phone-number"], parameters["zip-code"], parameters["last-name"])
+      `python lib/assets/python/request_help.py "#{str}"`
     when '1.2 Can leave'
       `python3 lib/assets/python/best_shoppingtime.py  "#{parameters["Location"]}"`
     when 'request_help'
