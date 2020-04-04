@@ -14,9 +14,14 @@
 
 }
 
-.banner-center-container {
+.middle-center {
   width: 70%;
+  text-align: center;
+}
+
+.banner-center-white-container {
   padding: 0, 20px;
+  margin-bottom: 50px;
   background-color: rgba(250, 250, 250, 0.5);
 
   display: flex;
