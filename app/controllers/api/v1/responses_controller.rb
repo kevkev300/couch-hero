@@ -4,8 +4,8 @@ class Api::V1::ResponsesController < Api::V1::BaseController
     intent = find_intent(file)
     parameters = find_parameters(file)
 
-    # answer_text = find_answer(intent, parameters)
-    answer_text = "intent: #{intent}, parameters: #{parameters}"
+    answer_text = find_answer(intent, parameters)
+    # answer_text = "intent: #{intent}, parameters: #{parameters}"
     @response = { fulfillmentText: answer_text }
 
     render :answer
@@ -20,8 +20,8 @@ class Api::V1::ResponsesController < Api::V1::BaseController
 
   def find_answer(intent, parameters)
     case intent
-    when 'affected'
-      `python3 lib/assets/python/test.py "#{parameters}"`
+    when 'How many people are infected?'
+      `python3 lib/assets/python/confirmedCases.py "#{parameters["country"]}"`
     end
   end
 
@@ -30,6 +30,6 @@ class Api::V1::ResponsesController < Api::V1::BaseController
   end
 
   def find_parameters(file)
-    file["queryResult"]["parameters"]["country"]
+    file["queryResult"]["parameters"]
   end
 end
