@@ -3,6 +3,8 @@ import mysql.connector
 import random
 from textmagic.rest import TextmagicRestClient
 
+
+## Google Cloud MySQL credentials
 mydb = mysql.connector.connect(
     host="34.76.64.123",
     user="root",
@@ -11,19 +13,21 @@ mydb = mysql.connector.connect(
 )
 mycursor = mydb.cursor()
 
-# Textmagic
+# Textmagic SMS credentials
 username = "christianhinge"
 token = "XnyI8onJ31O6RQYujpXs9sHiZjcR80"
 
-## ARGUMENTS: 1) Phone number 2) Zip code
+## Get pastor based on zip code and last name
 def FIND_PASTOR(zip_code,name):
 
-    sql = 'SELECT * FROM pastors WHERE name = %s AND zip = %s;'
-    mycursor.execute(sql,(name,zip_code))
+    sql = "SELECT * FROM pastors WHERE name LIKE '%{}' AND zip = {};".format(name,zip_code)
+    print(sql)
+    mycursor.execute(sql)
     pastor = mycursor.fetchall()
     
     return pastor[0]
 
+## Add voluenteer to pastor district
 def ADD_VOLUENTEER(phone_no, zip_code, name, pastor):
 
     pastor_obj = FIND_PASTOR(zip_code, pastor)
@@ -33,7 +37,8 @@ def ADD_VOLUENTEER(phone_no, zip_code, name, pastor):
     val = (name, phone_no, zip_code, pastor_id)
     mycursor.execute(sql, val)
     mydb.commit()
-    
+   
+## Approve voluenteer for helping others
 def APPROVE_VOLUENTEER(voluenteer_id):
     
     sql = "UPDATE voluenteers SET approved = TRUE WHERE id = {};".format(voluenteer_id)
@@ -42,7 +47,7 @@ def APPROVE_VOLUENTEER(voluenteer_id):
 
 
 
-## ARGUMENTS: 1) Phone number 2) Zip code
+## Get one of the voluenteers from a district based on that districts pastor and zip
 def GET_VOLUENTEER(zip_code,pastor):
     pastor_obj = FIND_PASTOR(zip_code, pastor)
     pastor_id = pastor_obj[0]
@@ -64,12 +69,14 @@ def GET_VOLUENTEER(zip_code,pastor):
     DO_DEED(voluenteer[5])
     return selected_voluenteer
 
+#Register that a voluenteer has done a deed
 def DO_DEED(voluenteer_id):
     
     sql = "UPDATE voluenteers SET deeds = deeds+1 WHERE id = {};".format(voluenteer_id)
     mycursor.execute(sql);
     mydb.commit()
 
+#Send SMS to voluenteer informing that a person needs help
 def SEND_SMS_VOLUENTEER(phone_no_v,phone_no_r):
 
     message = "Hi! A citizen in your area needs help shopping. Please contact him/her via the following phone number: {}. Thank you for helping".format(phone_no_r)

@@ -24,6 +24,10 @@ class Api::V1::ResponsesController < Api::V1::BaseController
       `python3 lib/assets/python/confirmedCases.py "#{parameters["country"]}"`
     when '1.2 Can leave'
       `python3 lib/assets/python/best_shoppingtime.py  "#{parameters["Location"]}"`
+    when 'request_help'
+      str = stringify(parameters["phone-no"], parameters["zip-code"], parameters["last-name"])
+      `python3 lib/assets/python/request_help.py  "#{parameter["phone-no"], parameters["zip-code"], parameters["last-name"]}"`
+      `python3 lib/assets/python/file.py "#{str}"`
     end
   end
 
@@ -34,4 +38,9 @@ class Api::V1::ResponsesController < Api::V1::BaseController
   def find_parameters(file)
     file["queryResult"]["parameters"]
   end
+
+  def stringify(param1, param2, param3)
+    "#{param1} ~ #{param2} ~ #{param3}"
+  end
+
 end
