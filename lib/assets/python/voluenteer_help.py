@@ -1,8 +1,12 @@
 from pastor_voluenteer import *
 
-phone_no = sys.argv[1]
-zip_code = sys.argv[2]
-pastor = sys.argv[3]
+
+parameters = sys.argv[1]
+parameters = parameters.split(" ~ ")
+
+phone_no = parameters[0]
+zip_code = parameters[1]
+pastor = parameters[2]
 
 ADD_VOLUENTEER(phone_no, zip_code,"voluenteer_name",pastor)
 

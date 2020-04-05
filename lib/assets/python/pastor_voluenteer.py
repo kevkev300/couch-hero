@@ -65,7 +65,7 @@ def GET_VOLUENTEER(zip_code,pastor):
             selected_voluenteer = voluenteer;
             min_deeds = voluenteer[5]
     
-    DO_DEED(voluenteer[5])
+    DO_DEED(selected_voluenteer[5])
     return selected_voluenteer
 
 #Register that a voluenteer has done a deed
@@ -77,7 +77,7 @@ def DO_DEED(voluenteer_id):
 
 #Send SMS to voluenteer informing that a person needs help
 def SEND_SMS_VOLUENTEER(phone_no_v,phone_no_r):
-
+    
     message = "Hi! A citizen in your area needs help shopping. Please contact him/her via the following phone number: {}. Thank you for helping".format(phone_no_r)
     client = TextmagicRestClient(username, token)
     client.messages.create(phones=phone_no_v, text=message)
