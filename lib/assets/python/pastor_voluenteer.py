@@ -20,7 +20,7 @@ token = "XnyI8onJ31O6RQYujpXs9sHiZjcR80"
 ## Get pastor based on zip code and last name
 def FIND_PASTOR(zip_code,name):
 
-    sql = "SELECT * FROM pastors WHERE name LIKE '%{}' AND zip = {}".format(name,zip_code)
+    sql = "SELECT * FROM pastors WHERE name LIKE '%{}' AND zip = {};".format(name,zip_code)
     print(sql)
     mycursor.execute(sql)
     pastor = mycursor.fetchall()

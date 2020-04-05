@@ -2,7 +2,7 @@ from pastor_voluenteer import *
 import sys
 
 parameters = sys.argv[1]
-parameters = parameters.split()
+parameters = parameters.split(" ~ ")
 
 phone_no_r = parameters[0]
 zip_code = parameters[1]
