@@ -28,7 +28,7 @@ class Api::V1::ResponsesController < Api::V1::BaseController
       str = stringify(parameters["phone-number"], parameters["zip-code"], parameters["last-name"])
       `python lib/assets/python/request_help.py "#{str}"`
     end
-    when 'request_help'
+    when 'voluenteer_help'
       str = stringify(parameters["phone-number"], parameters["zip-code"], parameters["last-name"])
       `python lib/assets/python/voluenteer_help.py "#{str}"`
     end
