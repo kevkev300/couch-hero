@@ -42,7 +42,7 @@ url = "https://api.covid19api.com/total/country/" + countryCode + "/status/confi
 data = request.urlopen(url).read()
 data = json.loads(data)
 data = data[-1]
-currDate = data['Date']
+#currDate = data['Date']
 #currDate = date.fromisoformat(currDate[:10])
 #currDate = datetime.strftime(currDate[:10], "%m/%d/%Y")
 
