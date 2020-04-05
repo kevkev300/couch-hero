@@ -8,6 +8,7 @@ phone_no_r = parameters[0]
 zip_code = parameters[1]
 pastor = parameters[2]
 
+print(phone_no_r, zip_code, pastor)
 
 #print(phone_no_r)
 
