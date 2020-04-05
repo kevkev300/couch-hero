@@ -79,11 +79,8 @@ def DO_DEED(voluenteer_id):
 def SEND_SMS_VOLUENTEER(phone_no_v,phone_no_r):
 
     message = "Hi! A citizen in your area needs help shopping. Please contact him/her via the following phone number: {}. Thank you for helping".format(phone_no_r)
-    try:
-        client = TextmagicRestClient(username, token)
-        client.messages.create(phones=phone_no_v, text=message)
-    except:
-        print("Error")
+    client = TextmagicRestClient(username, token)
+    client.messages.create(phones=phone_no_v, text=message)
 
 
 
